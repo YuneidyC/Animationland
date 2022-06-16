@@ -1,11 +1,361 @@
+:root {
+    --dark-brown: #a54a38;
+    --light-brown: #bf624c;
+    --dark-green: #49a054;
+    --light-green: #51af5e;
+}
+
 body {
-    counter-reset: game;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
 }
 
-input:checked {
-    counter-increment: game;
+.phone {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    border: 8px solid black;
+    border-radius: 40px;
+    background: #ccefff;
+    box-shadow: 0 19px 38px rgb(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    z-index: 11;
+    overflow: hidden;
+    counter-reset: score;
 }
 
-.total-count::after {
-    content: counter(game);
+.title__score-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 12;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 30px;
+}
+
+.title__score-container .score {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #b25b4b;
+    font-weight: bold;
+}
+
+.score::after {
+    content: counter(score);
+}
+
+input[type=checkbox]:checked {
+    counter-increment: score;
+}
+
+.title__score-container img {
+    width: 120px;
+    height: 30px;
+}
+
+.layer {
+    position: absolute;
+    bottom: 0;
+
+    animation-name: layer;
+    animation-iteration-count: infinite;
+}
+
+.layer-1 {
+    z-index: 1;
+    height: 450px;
+    width: 80px;
+    right: 60px;
+
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes layer {
+    0% {
+        bottom: 0;
+    }
+
+    25% {
+        bottom: -80px;
+    }
+
+    100% {}
+}
+
+
+.layer-1 input[type=checkbox], .layer-2 input[type=checkbox], .layer-4 input[type=checkbox], .layer-6 input[type=checkbox] {
+    appearance: none;
+    cursor: pointer;
+    height: 50px;
+    margin: 0;
+    position: relative;
+    top: 0;
+    width: 80px;
+    z-index: 2;
+}
+
+.layer-2 {
+    z-index: 2;
+    height: 450px;
+    width: 80px;
+    left: 60px;
+
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+}
+
+.layer-3 {
+    z-index: 3;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 400px;
+    width: 220px;
+    background: var(--light-brown);
+    border-radius: 20px 20px 0 0;
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.3), 5px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.layer-4 {
+    z-index: 4;
+    height: 320px;
+    width: 80px;
+    left: 20px;
+
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+}
+
+.layer-5 {
+    z-index: 5;
+    left: 0;
+    margin: 0 auto;
+    height: 270px;
+    width: 200px;
+    background: var(--light-brown);
+    border-radius: 20px 20px 0 40px;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.layer-6 {
+    z-index: 6;
+    height: 230px;
+    width: 80px;
+    right: 35px;
+
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+}
+
+.layer-7 {
+    z-index: 7;
+    height: 180px;
+    width: 150px;
+    background: var(--light-brown);
+    right: 0;
+    border-radius: 20px 20px 40px 0;
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.layer-8 {
+    z-index: 8;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 110px;
+    width: 200px;
+}
+
+.layer-9 {
+    z-index: 9;
+    height: 100px;
+    width: 120px;
+    left: 0;
+}
+
+.layer-10 {
+    z-index: 10;
+    height: 100px;
+    width: 120px;
+    right: 0;
+}
+
+
+.left-ear--outer {
+    background: white;
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: 15px;
+}
+
+.right-ear--outer {
+    background: white;
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    right: 15px;
+}
+
+.left-ear--inner {
+    background: pink;
+    border-radius: 80%;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    left: 18px;
+    top: 8px;
+}
+
+
+.right-ear--inner {
+    background: pink;
+    border-radius: 80%;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    right: 18px;
+    top: 8px;
+}
+
+.head {
+    background: white;
+    border-radius: 50px;
+    height: 80px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+}
+
+.head__eye {
+    background: gray;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: 15px;
+
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0% {
+        height: 4px;
+    }
+
+    5% {
+        transform: translateX(0px, 2px);
+        height: 1px;
+    }
+
+    10% {
+        transform: translateX(0px, 0px);
+        height: 4px;
+    }
+}
+
+.head__eye--left {
+    left: 30px;
+}
+
+.head__eye--right {
+    right: 30px;
+}
+
+.grass {
+    background: var(--dark-green);
+    height: 30px;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    z-index: 1;
+}
+
+.zigzag {
+    background: linear-gradient(135deg, var(--dark-green) 25%, transparent 25%) -50px 0, linear-gradient(-135deg, var(--dark-green) 25%, transparent 25%) -50px 0, linear-gradient(45deg, var(--light-brown) 25%, transparent 25%), linear-gradient(-45deg, var(--light-brown) 25%, transparent 25%);
+    background-size: 33px 30px;
+    height: 30px;
+    width: 100%;
+    background-color: #9b512c;
+}
+
+
+.cloud-right, .cloud-left {
+    width: 80px;
+    height: 50px;
+    background: white;
+    position: absolute;
+    border-radius: 0 50px 50px 0;
+    top: 50px;
+    right: 15px;
+    z-index: 9;
+}
+
+.cloud__top--right {
+    width: 70px;
+    height: 80px;
+    background: white;
+    position: absolute;
+    border-radius: 50px 50px 0 40px;
+    top: 20px;
+    left: 0;
+    z-index: 9;
+}
+
+.cloud-left {
+    border-radius: 50px 0 0 50px;
+}
+
+.cloud__top--left {
+    width: 70px;
+    height: 80px;
+    background: white;
+    position: absolute;
+    top: 20px;
+    z-index: 9;
+    right: 0;
+    border-radius: 50px 50px 40px 0;
+}
+
+.plant-left {
+    width: 80px;
+    height: 70px;
+    background: var(--light-green);
+    position: absolute;
+    border-radius: 50px 50px 0 0;
+    top: 40px;
+
+}
+
+.plant-center {
+    width: 70px;
+    height: 105px;
+    background: var(--light-green);
+    position: absolute;
+    border-radius: 50px 50px 0 0;
+    top: 5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.plant-right {
+    width: 80px;
+    height: 85px;
+    background: var(--light-green);
+    position: absolute;
+    border-radius: 50px 50px 0 0;
+    top: 25px;
+    right: 0;
 }
