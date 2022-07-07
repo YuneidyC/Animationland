@@ -21,7 +21,6 @@ body {
     border-radius: 40px;
     background: #ccefff;
     box-shadow: 0 19px 38px rgb(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-    z-index: 11;
     overflow: hidden;
     counter-reset: score;
 }
@@ -290,8 +289,7 @@ input[type=checkbox]:checked {
     background-color: #9b512c;
 }
 
-
-.cloud-right, .cloud-left {
+.cloud-right, .cloud-left, .cloud-right-shadow, .cloud-left-shadow {
     width: 80px;
     height: 50px;
     background: white;
@@ -299,10 +297,19 @@ input[type=checkbox]:checked {
     border-radius: 0 50px 50px 0;
     top: 50px;
     right: 15px;
-    z-index: 9;
+    z-index: 10;
 }
 
-.cloud__top--right {
+.cloud-right-shadow, .cloud-left-shadow {
+    z-index: 9;
+    box-shadow: 0px 0px 26px 9px rgba(0 0 0 / 30%);
+}
+
+.cloud-left, .cloud-left-shadow {
+    border-radius: 50px 0 0 50px;
+}
+
+.cloud__top--right, .cloud__top--left, .cloud__top--right-shadow, .cloud__top--left-shadow {
     width: 70px;
     height: 80px;
     background: white;
@@ -310,47 +317,20 @@ input[type=checkbox]:checked {
     border-radius: 50px 50px 0 40px;
     top: 20px;
     left: 0;
+    z-index: 10;
+}
+
+.cloud__top--left, .cloud__top--left-shadow {
+    left: 45%;
+    right: 0;
+}
+
+.cloud__top--right-shadow, .cloud__top--left-shadow {
+    box-shadow: 0px 0px 26px 12px rgba(0 0 0 / 35%);
     z-index: 9;
 }
 
-.cloud-left {
-    border-radius: 50px 0 0 50px;
-}
-
-.cloud__top--left {
-    width: 70px;
-    height: 80px;
-    background: white;
-    position: absolute;
-    top: 20px;
-    z-index: 9;
-    right: 0;
-    border-radius: 50px 50px 40px 0;
-}
-
-.plant-left {
-    width: 80px;
-    height: 70px;
-    background: var(--light-green);
-    position: absolute;
-    border-radius: 50px 50px 0 0;
-    top: 40px;
-
-}
-
-.plant-center {
-    width: 70px;
-    height: 105px;
-    background: var(--light-green);
-    position: absolute;
-    border-radius: 50px 50px 0 0;
-    top: 5px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-
-.plant-right {
+.plant-right, .plant-left, .plant-left-shadow, .plant-right-shadow, .plant-center, .plant-center-shadow {
     width: 80px;
     height: 85px;
     background: var(--light-green);
@@ -358,4 +338,23 @@ input[type=checkbox]:checked {
     border-radius: 50px 50px 0 0;
     top: 25px;
     right: 0;
+    z-index: 9;
+}
+
+.plant-left, .plant-left-shadow {
+    top: 40px;
+    right: 58%;
+}
+
+.plant-center, .plant-center-shadow {
+    width: 70px;
+    height: 105px;
+    top: 5px;
+    left: 0;
+    margin: 0 auto;
+}
+
+.plant-left-shadow, .plant-center-shadow, .plant-right-shadow {
+    z-index: 8;
+    box-shadow: 0 0 14px 10px rgb(0 0 0 / 30%);
 }
