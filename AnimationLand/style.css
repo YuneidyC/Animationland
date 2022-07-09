@@ -192,7 +192,38 @@ input[type=checkbox]:checked {
     height: 50px;
     position: absolute;
     left: 15px;
+
 }
+
+.layer .left-ear--outer, .layer .left-ear--inner,
+.layer .right-ear--outer, .layer .right-ear--inner {
+    animation-name: shake;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(6deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-6deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 
 .right-ear--outer {
     background: white;
@@ -212,7 +243,6 @@ input[type=checkbox]:checked {
     left: 18px;
     top: 8px;
 }
-
 
 .right-ear--inner {
     background: pink;
