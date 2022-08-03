@@ -86,7 +86,6 @@ input[type=checkbox]:checked {
     100% {}
 }
 
-
 .layer-1 input[type=checkbox], .layer-2 input[type=checkbox], .layer-4 input[type=checkbox], .layer-6 input[type=checkbox] {
     appearance: none;
     cursor: pointer;
@@ -184,7 +183,6 @@ input[type=checkbox]:checked {
     right: 0;
 }
 
-
 .left-ear--outer {
     background: white;
     border-radius: 90%;
@@ -223,7 +221,6 @@ input[type=checkbox]:checked {
         transform: rotate(0deg);
     }
 }
-
 
 .right-ear--outer {
     background: white;
