@@ -4,14 +4,14 @@ Minigame where you need to click on small rabbits that pop out at different spee
 
 This project was developed during the course [**CSS Animation**](https://platzi.com/cursos/animaciones-css/).
 
-# Improvements
+## Improvements
 
 I have added the following:
 
 - Animation to the rabbits' ears.
 - Shadow to the clouds and bush.
 
-# Tech stack
+## Tech stack
 
 <p>
   <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" >
@@ -22,6 +22,10 @@ I have added the following:
   </a>
 </p>
 
-# Test it out
+## Lighthouse
+
+<img src="lighthouse_results/desktop/pagespeed.svg" alt="Lighthouse report" width="800" />
+
+## Test it out
 
 You can test this [**here**](https://yuneidyc.github.io/Animationland/).
